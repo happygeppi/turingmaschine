@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Turing Machine</title>
+    <link rel="shortcut icon" href="Assets/icon.png" type="image/png" />
+    <link rel="stylesheet" href="Assets/style.css" />
+    <script src="Assets/script.js" defer></script>
+  </head>
+  <body>
+    <h1 id="title">Turing Machine</h1>
+
+    <div id="container">
+      <div id="controls">
+        <div id="play"><div id="play-icon"></div></div>
+        <div id="next">
+          <div id="next-icon-1"></div>
+          <div id="next-icon-2"></div>
+        </div>
+        <div id="pause"><div id="pause-icon"></div></div>
+        <div id="tape-speed" class="control-box">
+          <span class="control-label" id="tape-speed-label">Tape speed:</span>
+          <input class="control-input" type="text" id="tape-speed-input" />
+        </div>
+        <div id="tape-length" class="control-box">
+          <span class="control-label" id="tape-length-label">Tape length:</span>
+          <input class="control-input" type="text" id="tape-length-input" />
+        </div>
+        <div id="blank" class="control-box">
+          <span class="control-label" id="blank-label">Blank:</span>
+          <input class="control-input" type="text" id="blank-input" />
+        </div>
+        <div id="show-state" class="control-box">
+          <span class="control-label" id="show-state-label">State:</span>
+          <input class="control-input" type="text" id="show-state-input" />
+        </div>
+        <div id="randomize" class="control-box">Randomize Tape</div>
+        <div id="reset" class="control-box">Reset Tape</div>
+        <div id="step" class="control-box">Step: 0</div>
+      </div>
+      <div id="tape-con">
+        <div id="tape"></div>
+      </div>
+      <div id="rules">
+        <div id="rules-control">
+          <div id="new-rule">New Rule</div>
+
+          <label for="import-rules" id="import-rules-lbl">
+            <input type="file" name="import-rules" id="import-rules" />
+            Import Rules
+          </label>
+
+          <div id="export-rules" class="control-box">
+            <span id="export-rules-label">Save as</span>
+            <input type="text" id="export-rules-input" />
+            <span id="export-rules-type">.js</span>
+          </div>
+        </div>
+      </div>
+    </div>
+	<script type="module">
+	  // Import the functions you need from the SDKs you need
+
+	  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+
+	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+
+	  // TODO: Add SDKs for Firebase products that you want to use
+
+	  // https://firebase.google.com/docs/web/setup#available-libraries
+
+
+	  // Your web app's Firebase configuration
+
+	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+	  const firebaseConfig = {
+
+		apiKey: "AIzaSyAkuzUnCgEx7b0QSQSuVCNb8d5hHdqgFaE",
+
+		authDomain: "alan-turing-machine.firebaseapp.com",
+
+		projectId: "alan-turing-machine",
+
+		storageBucket: "alan-turing-machine.appspot.com",
+
+		messagingSenderId: "1028742372943",
+
+		appId: "1:1028742372943:web:d8b85ca6403db016ca543a",
+
+		measurementId: "G-MKZ47MS8HL"
+
+	  };
+
+
+	  // Initialize Firebase
+
+	  const app = initializeApp(firebaseConfig);
+
+	  const analytics = getAnalytics(app);
+
+	</script>
+  </body>
+</html>
