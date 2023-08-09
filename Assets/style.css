@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+  font-family: "Ubuntu", "Arial";
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --hue: 260;
+  --hue2: 33;
+  --sat: 77%;
+  --sat2: 95%;
+  --light: hsl(var(--hue), var(--sat), 88%);
+  --dark: hsl(var(--hue), var(--sat), 53%);
+  --prime: hsl(var(--hue), var(--sat), 40%);
+  --second: hsl(var(--hue2), var(--sat2), 70%);
+}
+
+body {
+  padding: 20px;
+  background: #333;
+}
+
+#title {
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 64px;
+  padding: 16px;
+  background: var(--prime);
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0px 0px 8px 0px #000;
+  position: relative;
+  border-radius: 5px;
+}
+
+#container {
+  background: #eee;
+  height: fit-content;
+  box-shadow: 0px 0px 8px 0px #000;
+  padding: 20px;
+  position: relative;
+  border-radius: 5px;
+}
+
+#tape-con {
+  position: relative;
+  width: fit-content;
+  max-width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow-x: scroll;
+  padding-bottom: 4px;
+}
+
+#tape {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  border-width: 0px 0px 0px 1px;
+  border-color: #000;
+  border-style: solid;
+  position: relative;
+}
+
+.spot {
+  font-family: "Consolas", "monospace";
+  background: #fff;
+  border-width: 1px 1px 1px 0px;
+  border-color: #000;
+  border-style: solid;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.active {
+  background: var(--second);
+}
+
+#rules {
+  margin: 10px 0px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  height: fit-content;
+  position: relative;
+}
+
+#rules-control {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+#rules-control > * {
+  width: fit-content;
+  background: var(--second);
+  color: #000;
+  margin: 0px 4px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 4px 0px #000;
+  height: fit-content;
+  font-size: 20px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+input[type="file"] {
+  display: none;
+}
+
+#export-rules {
+  display: flex;
+  flex-direction: row;
+  cursor: default !important;
+}
+#export-rules-label {
+  cursor: pointer;
+}
+#export-rules-input {
+  width: 80px;
+  margin-left: 6px;
+  background: #ffffff55;
+  border: none;
+  text-align: center;
+}
+#export-rules-input:focus {
+  outline: none;
+}
+
+.rule {
+  margin: 4px;
+  padding: 4px;
+  outline: 1px solid #000;
+  background: #fff;
+  height: fit-content;
+  width: 80%;
+  position: relative;
+  border-radius: 4px;
+}
+
+.active-rule {
+  outline: 2px solid var(--prime);
+}
+
+.legend {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.rule-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.rule-content > *,
+.legend *  {
+  width: 20%;
+  text-align: center;
+  font-size: 24px;
+  height: fit-content;
+  position: relative;
+}
+
+.rule-content > * {
+  font-family: "Consolas", "monospace";
+  height: 28px;
+  box-sizing: border-box;
+}
+
+.rule-input {
+  border: none;
+  width: 50%;
+  height: 80%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+
+.rule-input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--dark);
+}
+
+.invalid {
+  outline: 1px solid #f00;
+}
+
+.legend * {
+  font-size: 12px !important;
+  cursor: default;
+}
+
+.delete-rule {
+  position: relative;
+  height: 80%;
+  aspect-ratio: 1 / 1;
+  background: #d22;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: table;
+  cursor: pointer;
+}
+.delete-rule::after {
+  content: "x";
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+  color: #fff;
+}
+
+#controls {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#play, #next, #pause {
+  background: var(--prime);
+  outline: 1px solid #555;
+  margin: 0px 8px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: relative;
+}
+
+#play:active, #next:active, #pause:active, #randomize:active, #reset:active {
+  background: var(--dark);
+}
+
+#play-icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  clip-path: polygon(32% 20%, 80% 50%, 32% 80%);
+}
+
+#next-icon-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  clip-path: polygon(28% 20%, 70% 50%, 28% 80%);
+}
+#next-icon-2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  clip-path: polygon(64% 20%, 76% 20%, 76% 80%, 64% 80%);
+}
+
+#pause-icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  clip-path: polygon(28% 28%, 72% 28%, 72% 72%, 28% 72%);
+}
+
+.control-box {
+  background: var(--prime);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin: 0px 8px;
+  cursor: pointer;
+}
+
+#show-state, #step, #tape-length, #tape-speed {
+  cursor: default !important;
+}
+
+.control-input {
+  width: 24px;
+  background: #ffffff33;
+  color: #fff;
+  text-align: center;
+  border: none;
+  padding: 0px 4px;
+  margin-left: 4px;
+}
+.control-input:focus {
+  outline: none;
+}
